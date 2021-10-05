@@ -1,4 +1,4 @@
-use num_bigint::{BigUint,ToBigUint};
+use num_bigint::{BigUint, ToBigUint};
 
 fn collatz(szam: BigUint, lepes: &mut u128, max: &mut BigUint) {
     if *max < szam {
@@ -9,7 +9,11 @@ fn collatz(szam: BigUint, lepes: &mut u128, max: &mut BigUint) {
         if &szam & 1.to_biguint().unwrap() == 0u8.into() {
             collatz(szam / 2.to_biguint().unwrap(), lepes, max);
         } else {
-            collatz(3.to_biguint().unwrap() * szam + 1.to_biguint().unwrap(), lepes, max); // checked_mul, checked_add
+            collatz(
+                3.to_biguint().unwrap() * szam + 1.to_biguint().unwrap(),
+                lepes,
+                max,
+            );
         }
     }
 }
