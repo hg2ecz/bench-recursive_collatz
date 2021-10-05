@@ -13,7 +13,11 @@ fn collatz(szam: u64, lepes: &mut u64, max: &mut u64) {
 }
 
 fn main() {
-    let maxcount = std::env::args().nth(1).expect("Argumentum 1 szám").parse().expect("Az argumentum szám kell legyen!");
+    let maxcount = std::env::args()
+        .nth(1)
+        .expect("Argumentum 1 szám")
+        .parse()
+        .expect("Az argumentum szám kell legyen!");
     let mut maxnum = 0;
     for szam in 1..maxcount {
         let mut lepes = 0;
