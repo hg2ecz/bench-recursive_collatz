@@ -15,10 +15,10 @@ fn collatz(szam: BigUint, lepes: &mut u128, max: &mut BigUint) {
 }
 
 fn main() {
-    let maxcount = std::env::args()
+    let maxcount: BigUint = std::env::args()
         .nth(1)
         .expect("Argumentum 1 szám")
-        .parse::<BigUint>()
+        .parse()
         .expect("Az argumentum szám kell legyen!");
     let mut maxnum = 0u8.into();
     //for szam in 1.into()..maxcount {
