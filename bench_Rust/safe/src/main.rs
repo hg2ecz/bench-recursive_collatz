@@ -7,7 +7,14 @@ fn collatz(szam: u64, lepes: &mut u64, max: &mut u64) {
         if szam % 2 == 0 {
             collatz(szam / 2, lepes, max);
         } else {
-            collatz(3 * szam + 1, lepes, max);
+            collatz(
+                szam.checked_mul(3)
+                    .expect("Szorzás túlcsordulás")
+                    .checked_add(1)
+                    .expect("Összeadás túlcsordulás"),
+                lepes,
+                max,
+            );
         }
     }
 }
