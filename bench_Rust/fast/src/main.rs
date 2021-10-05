@@ -2,7 +2,7 @@ fn collatz(szam: u64, lepes: &mut u64, max: &mut u64) {
     if *max < szam {
         *max = szam;
     }
-    *lepes +=1; // lepes.checked_add(1).expect("Túlcsordult a számláló!");
+    *lepes += 1; // lepes.checked_add(1).expect("Túlcsordult a számláló!");
     if szam != 1 {
         if szam % 2 == 0 {
             collatz(szam / 2, lepes, max);
